@@ -1,0 +1,19 @@
+#this should really live in another repo and the compost should be versioned
+name: Example Workflow Using Composite Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Use My Composite Action
+      uses: your-org/reusable-actions/my-composite-action@v1
+      with:
+        some_input: 'Hello, World!'
