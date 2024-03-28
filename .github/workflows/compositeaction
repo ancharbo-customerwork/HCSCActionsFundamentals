@@ -1,0 +1,16 @@
+name: 'My Composite Action'
+description: 'Performs a series of steps'
+inputs:
+  some_input:
+    description: 'An input for the action'
+    required: true
+    default: 'default value'
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Step 1: Do something with ${{ inputs.some_input }}"
+      shell: bash
+
+    - run: echo "Step 2: Do another thing"
+      shell: bash
